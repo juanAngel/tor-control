@@ -115,6 +115,25 @@ class Tor {
     saveConf (request) { // Chapter 3.6
         return this.sendCommand('SAVECONF ' + request);
     }
+    async addOnion (port,host,privateKey) { // Chapter 3.6
+        let key = privateKey?privateKey:"NEW:BEST";
+        let response = await this.sendCommand('ADD_ONION '+key+' Port=' + port+(host!=undefined?(","+host):""));
+
+        if(response.type === 250){
+            objArray = response.data.split("\r\n").map(e=>e.split("250-")[1]).filter(e=>e).map(e=>[e.split("=")[0],e.split("=").slice(1).join('=')])
+            let onion = objArray.reduce(((obj, e) => Object.assign(obj,{[e[0]]:e[1]})),{})
+            return onion;
+        }else{
+            return {
+                error:response.type,
+                msg:response.data
+            };
+        }
+        
+    }
+    async delOnion (serviceId) { // Chapter 3.6
+        return this.sendCommand('DEL_ONION ' + serviceId.replace(/\.onion/, ``));
+    }
     // Signals:
     signal (signal) { // Chapter 3.7
         return this.sendCommand('SIGNAL ' + signal);
