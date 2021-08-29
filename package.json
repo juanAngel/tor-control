@@ -1,5 +1,5 @@
 {
-  "name": "tor-control-promise",
+  "name": "tor-control",
   "version": "1.0.4",
   "description": "communicate tor-control",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pelogvc/tor-control-promise.git"
+    "url": "https://github.com/juanAngel/tor-control.git"
   },
   "author": "pelogvc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pelogvc/tor-control-promise/issues"
+    "url": "https://github.com/juanAngel/tor-control/issues"
   },
-  "homepage": "https://github.com/pelogvc/tor-control-promise#readme",
+  "homepage": "https://github.com/juanAngel/tor-control#readme",
   "dependencies": {},
   "devDependencies": {
     "mocha": "^6.0.2"
