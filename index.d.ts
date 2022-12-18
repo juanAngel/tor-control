@@ -23,29 +23,29 @@ export declare class Tor{
     private connection:net.Socket;
     private opts:torParams
 
-    constructor({ host, port, password }:torParams = {})
-    async connect():void;
-    async sendCommand(command:string):torResponse;
-    async quit ():void;
-    async setConf (request:string):torResponse;
-    async resetConf (request:string):torResponse;
-    async getConf (request:string):torResponse;
-    async getEvents (request:string):torResponse;
-    async saveConf (request:string):torResponse;
-    async addOnion (port:number,host?:string,privateKey?:string):hiddenService;
-    async delOnion (serviceId):void;
+    constructor({ host, port, password }:torParams)
+    connect():Promise<void>;
+    sendCommand(command:string):Promise<torResponse>;
+    quit():Promise<void>;
+    setConf(request:string):Promise<torResponse>;
+    resetConf(request:string):Promise<torResponse>;
+    getConf(request:string):Promise<torResponse>;
+    getEvents(request:string):Promise<torResponse>;
+    saveConf(request:string):Promise<torResponse>;
+    addOnion(port:number,host?:string,privateKey?:string):Promise<hiddenService>;
+    delOnion(serviceId:string):Promise<void>;
 
-    async signal (signal:string):void;
-    async signalReload () :void;
-    async signalHup ():void;
-    async signalShutdown ():void;
-    async signalDump ():void;
-    async signalUsr1 ():void;
-    async signalDebug ():void;
-    async signalUsr2 ():void;
-    async signalHalt ():void;
-    async signalTerm ():void;
-    async signalInt ():void;
-    async signalNewnym ():void;
-    async signalCleardnscache ():void;
+    signal(signal:string):Promise<void>;
+    signalReload():Promise<void>;
+    signalHup():Promise<void>;
+    signalShutdown():Promise<void>;
+    signalDump():Promise<void>;
+    signalUsr1():Promise<void>;
+    signalDebug():Promise<void>;
+    signalUsr2():Promise<void>;
+    signalHalt():Promise<void>;
+    signalTerm():Promise<void>;
+    signalInt():Promise<void>;
+    signalNewnym():Promise<void>;
+    signalCleardnscache():Promise<void>;
 }
