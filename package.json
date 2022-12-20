@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/juanAngel/tor-control.git"
+    "url": "https://github.com/juanAngel/tor-control-ts.git"
   },
   "author": "juanAngel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juanAngel/tor-control/issues"
+    "url": "https://github.com/juanAngel/tor-control-ts/issues"
   },
-  "homepage": "https://github.com/juanAngel/tor-control#readme",
+  "homepage": "https://github.com/juanAngel/tor-control-ts#readme",
   "dependencies": {},
   "devDependencies": {
     "mocha": "^6.0.2"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/juanAngel"
+    "registry": "https://npm.pkg.github.com/"
   }
 }
