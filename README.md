@@ -1,8 +1,8 @@
-# tor-control
+# tor-control-ts
 NodeJS, Promise based tor controller
 ## Installing
 ```
-$ npm install tor-control
+$ npm install tor-control-ts
 ```
 ## Install tor client
 On Debian you can install and run a relatively up to date Tor with.
@@ -32,8 +32,9 @@ ControlPort 9051
 HashedControlPassword 16:AEBC98A6777A318660659EC88648EF43EDACF4C20D564B20FF244E81DF
 ```
 ## Example
-```js
-const tor_control = require('tor-control');
+```ts
+import {Tor} from 'tor-control-ts';
+
 const tor = new tor_control({
     host: 'localhost',
     port: 9051,

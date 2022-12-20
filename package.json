@@ -1,6 +1,6 @@
 {
-  "name": "tor-control",
-  "version": "1.0.4",
+  "name": "tor-control-ts",
+"version": "1.0.0",
   "description": "communicate tor-control",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/juanAngel/tor-control.git"
   },
-  "author": "pelogvc",
+  "author": "juanAngel",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/juanAngel/tor-control/issues"
@@ -19,5 +19,8 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "^6.0.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/juanAngel"
   }
 }
