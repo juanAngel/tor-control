@@ -120,10 +120,12 @@ class Tor {
         let response = await this.sendCommand('ADD_ONION '+key+' Port=' + port+(host!=undefined?(","+host):""));
 
         if(response.type === 250){
-            objArray = response.data.split("\r\n").map(e=>e.split("250-")[1]).filter(e=>e).map(e=>[e.split("=")[0],e.split("=").slice(1).join('=')])
+            let objArray = response.data.split("\r\n").map(e=>e.split("250-")[1]).filter(e=>e).map(e=>[e.split("=")[0],e.split("=").slice(1).join('=')])
             let onion = objArray.reduce(((obj, e) => Object.assign(obj,{[e[0]]:e[1]})),{})
             
             onion.PrivateKey = onion.PrivateKey || privateKey;
+            if(onion.ServiceID)
+                onion.ServiceID+='.onion';
             
             return onion;
         }else{
@@ -215,4 +217,6 @@ class Tor {
     
 }
 
-module.exports = Tor; 
+module.exports = {
+    Tor
+}; 
