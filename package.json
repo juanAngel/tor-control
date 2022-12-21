@@ -21,6 +21,6 @@
     "mocha": "^6.0.2"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "@juanangel:registry": "https://npm.pkg.github.com/"
   }
 }
