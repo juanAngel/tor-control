@@ -3,7 +3,7 @@ const assert = require('assert');
 
 describe('tor control', function() {
 
-    const tor = new tor_control({
+    const tor = new tor_control.Tor({
         host: 'localhost',
         port: 9051,
         password: 'giraffe',
