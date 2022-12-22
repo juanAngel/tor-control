@@ -13,9 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+      - uses: tor-actions/setup-tor@main
         with:
           node-version: 16
+          config: |
+            ControlPort 9051
+            HashedControlPassword 16:95588C6B352EA5B360F37EF1CE56139E247D3871A8A27C1F48BF90CF39
       - run: npm ci
+      - run: npm test
 
   publish-gpr:
     needs: build
